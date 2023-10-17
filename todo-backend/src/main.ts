@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { JwtAuthGuard } from './auth/guard/jwt.guard';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
+  const port = process.env.PORT || 3000;
   const app = await NestFactory.create(AppModule);
   app.useGlobalGuards(new JwtAuthGuard());
   app.enableCors();
@@ -26,6 +27,6 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
-  await app.listen(3000);
+  await app.listen(port);
 }
 bootstrap();
