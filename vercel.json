@@ -2,14 +2,14 @@
     "version":2,
     "builds":[
         {
-            "src":"/Todo-List/todo-backend/src/main.ts",
+            "src":"/todo-backend/src/main.ts",
             "use":"@vercel/node"
         }
     ],
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"/Todo-List/todo-backend/src/main.ts",
+            "dest":"/todo-backend/src/main.ts",
             "methods":[
                 "GET",
                 "POST",
